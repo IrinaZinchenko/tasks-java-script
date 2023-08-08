@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    // Задача 1
+    // Эта функция выводит в столбик таблицу умножения (от 1 до 10) для числа x.
+
+    function listMult1(x) {
+      for (let i = 1; i <= 10; i++) {
+        console.log(`${x} * ${i} = ${x * i}`)
+      }
+    }
+
+    listMult1(9);
+
+
+    // Задача 2
+    // Эта функция выводит в столбик таблицу умножения (от 1 до count) для числа x.
+
+    function listMult2(x, count) {
+      for (let i = 1; i <= count; i++) {
+        console.log(`${x} * ${i} = ${x * i}`)
+      }
+    }
+
+    listMult2(3, 13);
+
+
+    // Задача 3
+    /* Внешний цикл данной функции выводит количество строк, равное y. И выводит в консоль числа в квадрытных скобках.
+    
+    Переменная count объявнется внутри внешнего цикла, и используется во внутреннем, чтобы сохранять в себе значение строки. 
+    И т.о. с каждым проходом внутреннего цикла увеличивется на одно выражение ` ${i} * ${j} = ${i * j}`.
+    Условие if в данном случе нужно для того, чтобы запятая между выражениями повлялась только на втором круге цикла */
+
+    function multTable(y) {
+      for (let i = 1; i <= y; i++) {
+        let count = "";
+        for (let j = 1; j <= 10; j++) {
+          if (j > 1) {
+            count = count + ',';
+          }
+          count = count + ` ${i} * ${j} = ${i * j}`;
+        }
+        console.log("[" + i + "]" + count);
+      }
+    }
+
+    multTable(7);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 40px;
+    }
+
+    .controls {
+      padding-bottom: 20px;
+    }
+
+    .poop-container {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-gap: 10px;
+
+    }
+
+    .box {
+      border-radius: 5px;
+      font-size: 50px;
+      text-align: center;
+      background-color: #420d0d;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="controls">
+    <h2> How much poop did you have today?</h2>
+    <input type="number" id="poop_counter" name="poop_counter" value="1" />
+  </div>
+
+  <div id="poop_container" class="poop-container"> </div>
+
+
+  <script type="text/javascript">
+    const poopContainer = document.getElementById('poop_container')
+    poopContainer.insertAdjacentHTML('beforeend', '<div class="box"> 💩 </div>')
+
+    document.getElementById('poop_counter').addEventListener('change', function (e) {
+      poopContainer.innerHTML = ''
+
+      const amountOfPoop = e.target.value
+
+      // Дописать код, который выведет нужное количество какашек
+
+      // Первое решение через цикл while
+      /* let poopCounter = 0;
+
+      while (poopCounter < amountOfPoop) {
+        poopContainer.insertAdjacentHTML('beforeend', '<div class="box"> 💩 </div>');
+        poopCounter++;
+      } */
+
+      // Первое решение через цикл for
+      for (let poopCounter = 0; poopCounter < amountOfPoop; poopCounter++) {
+        poopContainer.insertAdjacentHTML('beforeend', '<div class="box"> 💩 </div>');
+      }
+    })
+
+  </script>
+</body>
+
+</html>

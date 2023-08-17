@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // Вывести прямоугольный треугольник из чисел. Каждый новый ряд должен начинаться с 1:
+    // 1
+    // 1 2
+    // 1 2 3...
+
+    function columnBuilder1(total) {
+      for (let row = 1; row <= total; row++) {
+        let number = '';
+        for (let column = 1; column <= row; column++) {
+          number = number + " " + column;
+        }
+        console.log(number);
+      }
+    }
+
+    columnBuilder1(7);
+
+
+    function columnBuilder2(total) {
+      let number = '';
+      for (let row = 1; row <= total; row++) {
+        number = number + " " + row;
+        console.log(number);
+      }
+    }
+
+    columnBuilder2(8);
+
+
+    /* Два варианта решения этой задачи.
+    Переменная, хранящая промежуточные результаты, в обоих вариантах вынесена за пределы цикла,
+    в котором ей присваивается значение, зависящее от ее предыдущего значения.
+    В противном случае, если бы она была объявлена внутри, то при каджом проходе цикла,
+    она бы объявлялась заново и промежуточные результаты никуда бы не сохранялись */
+  </script>
+</body>
+
+</html>

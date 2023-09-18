@@ -18,11 +18,18 @@
     // console.log(isEven(-111)); // false
 
     function isEven(num) {
+      let result;
+
       if (num % 2 === 0) {
-        return true;
+        result = true;
       } else {
-        return false;
+        result = false;
       }
+
+      return result;
+
+      // // решение в 1 действие
+      // return num % 2 === 0;
     }
 
     console.log(isEven(42));
@@ -54,17 +61,21 @@
     // console.log(operationsWithEvenOdd(-8, -15)); // -15
 
     function operationsWithEvenOdd(a, b) {
+      let result;
+
       if (a % 2 === 0 && b % 2 === 0) {
-        return a * b;
+        result = a * b;
       } else if (a % 2 !== 0 && b % 2 !== 0) {
-        return a + b;
+        result = a + b;
       } else {
         if (a % 2 !== 0) {
-          return a;
+          result = a;
         } else {
-          return b;
+          result = b;
         }
       }
+
+      return result;
     }
 
     console.log(operationsWithEvenOdd(2, 4));

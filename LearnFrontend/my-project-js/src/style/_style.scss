@@ -1,0 +1,28 @@
+.task {
+  margin: 30px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  .input-form {
+    display: flex;
+    width: 30%;
+    column-gap: 10px;
+
+    .input-text {
+      display: flex;
+      flex-direction: column;
+
+      .input {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .btn {
+    align-self: flex-end;
+  }
+}

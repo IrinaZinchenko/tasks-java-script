@@ -275,7 +275,7 @@ button7.addEventListener("click", () => {
 });
 
 
-// Задача 12.8
+// Задача 12.8*
 const task8 = document.querySelector('.task-8');
 const input8 = task8.querySelector('#input-8');
 const button8 = task8.querySelector('.btn-8');
@@ -341,4 +341,71 @@ button8.addEventListener("click", () => {
   result8.innerHTML = result;
 
   input8.value = '';
+});
+
+
+// Задача 12.9*
+const task9 = document.querySelector('.task-9');
+const input9 = task9.querySelector('#input-9');
+const button9 = task9.querySelector('.btn-9');
+const result9 = task9.querySelector('.result-9');
+
+button9.addEventListener("click", () => {
+  const str = input9.value;
+
+  let result = '';
+
+  // цикл для заполнения массива чисел
+  let arrayOfNumbers = [];
+  let number = '';
+  const arrayForIf1 = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+  for (let i = 0; i < str.length; i++) {
+    if (arrayForIf1.includes(str[i])) {
+      number += str[i];
+    } else {
+      if (number) {
+        arrayOfNumbers.push(number);
+        number = '';
+      }
+    }
+  }
+
+  if (number) {
+    arrayOfNumbers.push(number);
+  }
+
+  // цикл для заполнения массива знаков операций
+  let arrayOfSigns = [];
+  const arrayForIf2 = ['+', '-', '*', '/'];
+
+  for (let i = 0; i < str.length; i++) {
+    if (arrayForIf2.includes(str[i])) {
+      arrayOfSigns.push(str[i]);
+    }
+  }
+
+  // получение результата
+  let count = 0;
+  let numResult = arrayOfNumbers.reduce((result, item) => {
+    if (arrayOfSigns[count] === '+') {
+      count++;
+      return parseInt(result) + parseInt(item);
+    } else if (arrayOfSigns[count] === '-') {
+      count++;
+      return parseInt(result) - parseInt(item);
+    } else if (arrayOfSigns[count] === '*') {
+      count++;
+      return parseInt(result) * parseInt(item);
+    } else {
+      count++;
+      return parseInt(result) / parseInt(item);
+    }
+  });
+
+  result = `<p>Ваш ввод: ${str}</p><p>Результат: ${numResult}</p>`;
+
+  result9.innerHTML = result;
+
+  input9.value = '';
 });

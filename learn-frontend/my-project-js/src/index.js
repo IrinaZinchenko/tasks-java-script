@@ -52,17 +52,17 @@ button1.addEventListener("click", () => {
   }
 
   if (noSpecialSymbols.every((item) => item === '0' || item === '1' || item === '2' || item === '3' || item === '4' || item === '5' || item === '6' || item === '7' || item === '8' || item === '9')) {
-
+    // переписать цифры в массив
     if (noSpecialSymbols.length === 11) {
       if (noSpecialSymbols[0] === '7') {
         noSpecialSymbols.unshift('+');
-
+        // заменить шифт на + и слайс строки с 1 символа до конца
         result = `<p>Ваш ввод: ${phoneNumber}</p><p>Ваш телефонный номер в нормализованном виде: ${noSpecialSymbols.join('')}</p>`;
       } else if (noSpecialSymbols[0] === '8') {
         noSpecialSymbols.shift();
         noSpecialSymbols.unshift('7');
         noSpecialSymbols.unshift('+');
-
+        // заменить шифт и аншифт на +7 и слайс строки с 1 символа до конца
         result = `<p>Ваш ввод: ${phoneNumber}</p><p>Ваш телефонный номер в нормализованном виде: ${noSpecialSymbols.join('')}</p>`;
       }
     }
@@ -95,6 +95,7 @@ button2.addEventListener("click", () => {
         resultArray.push(number);
         number = '';
       }
+      // внести условие с последним числом внутрь цикла при помощи позиции [string.length - 1]
     }
   }
 
@@ -123,7 +124,7 @@ button3.addEventListener("click", () => {
   let result = '';
 
   // код
-  // Заглавные 65-90б строчные 97-122
+  // Заглавные 65-90 строчные 97-122
   let capitl = 0;
   let lowercase = 0;
 
@@ -189,6 +190,7 @@ button5.addEventListener("click", () => {
   for (let i = (str.length - 1); i >= 0; i--) {
     reverseWord += str[i];
   }
+  // преобразовать строку в массив, применить метод массива чтобы сделать реверс массива и склеить обратно в строку
 
   let isChangeling;
   if (reverseWord === str) {
@@ -218,7 +220,7 @@ button6.addEventListener("click", () => {
 
   // код
   let array = str.split('');
-
+  // очистить через все фильтр от всех пробелов, а потом соединить обратно в строку через пробел
   while (array[0] === ' ') {
     array.shift();
   }
@@ -257,7 +259,7 @@ button7.addEventListener("click", () => {
 
   // код
   let array = str.split(' ');
-
+  // можно преобразовать цикл в метод map
   let newArray = [];
   for (let word of array) {
     let newStr = word.slice(0, 1).toUpperCase();

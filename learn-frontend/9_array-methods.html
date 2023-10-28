@@ -27,6 +27,10 @@
       return newArray;
     }
 
+    // function arrayDiff(array1, array2) {
+    // return array1.filter((item) => !array2.includes(item));
+    // }
+
     const arr1 = arrayDiff([1, 2], [1]);
     console.log(arr1); // [2]
 
@@ -53,6 +57,11 @@
       return result;
     }
 
+    //   function isEqual(array1, array2) {
+    //    if (array1.length != array2.length) return false;
+    //    return array1.every((el,indx) => el === array2[indx]);
+    // }
+
     const arr4 = [1, 2, 3, 4];
     const arr5 = [1, 2, 3, 4];
     console.log(isEqual(arr4, arr5)); // true
@@ -73,6 +82,10 @@
       return newArray3;
     }
 
+    //   function withoutEmpty(array) {
+    // 	return array.filter((elem) => Boolean(elem));
+    // }
+
     const arr8 = [1, false, "42", "", null, 67, undefined, -45, 0, "apple"];
     const newArr1 = withoutEmpty(arr8);
     console.log(newArr1); // [1, "42", 67, -45, "apple"];
@@ -92,6 +105,11 @@
 
       return newArray;
     }
+
+    //   function unique(array){
+    // 	return array.filter((elem, index, arr) => arr.indexOf(elem) === index);
+    // }
+
 
     const arr9 = [1, 2, 2, 3, 3, 4, 5, 6, 6];
     const newArr2 = unique(arr9);
@@ -115,6 +133,17 @@
 
       return newTwoDimArray.indexOf(query);
     }
+
+
+    //   function isEqual(array1, array2) {
+    // 	if (array1.length != array2.length) return false;
+    // 	return array1.every((el,indx) => el === array2[indx]);
+    // }
+
+    // function indexOfArray(twoDimArray, query) {
+    //   return twoDimArray.findIndex((elem, index) => isEqual(elem, query))
+    // }
+
 
     const twoDimArray1 = [[0, 0, 0], [1, 1, 1], [2, 2, 3]];
     const query1 = [1, 1, 1];
@@ -142,6 +171,14 @@
 
       return resultArray;
     }
+
+    //     function chunk(arr,n){
+    //   let newArr=[];
+    //   for(i=0; i < arr.length; i += n) {
+    //     newArr.push(arr.slice(i, i + n));
+    //   }
+    //   return newArr;
+    // }
 
     const arr10 = [1, 2, 3, 4, 5];
     console.log(chunk(arr10, 2)); // [[1,2], [3, 4], [5]]
@@ -200,6 +237,45 @@
     // console.log(intersection(arr11, arr12)); // [2]
     // console.log(intersection(arr13, arr14, arr15)); // ['b']
     // console.log(intersection(arr16, arr17, arr18)); // ['b', 'e']
+
+
+//     function intersection(...arrays) {
+//     const filteredArrays  = arrays.map((arr) => {
+//         return arr.filter((elem, index, thisArr) => thisArr.indexOf(elem) === index);
+//     })
+    
+//     const flatFilteredArrays = filteredArrays.flat();
+    
+//     const intersectionArr= flatFilteredArrays.reduce((acc, curr, index, arr) => {
+//         if (arr.filter((elem) => elem === curr).length === arrays.length && !acc.includes(curr)) {
+//             acc.push(curr);
+//             return acc
+//         } else {
+//             return acc;
+//         }
+//     }, [])
+    
+//     return intersectionArr;
+// }
+
+
+
+// function intersection(...arr){
+//   //Используем функцию unique из задания 10.4
+//   unique=(arr)=>arr.filter((el0,indx,arr)=>indx==0 || el0!=arr.slice(0,indx).find((el)=>el==el0)); 
+  
+//   let newFlatArr= arr.map((el,ind,arr)=>unique(el)).flat();
+ 
+//   let newFlatArrUnique=unique(newFlatArr);
+ 
+//   let result=[];
+//   newFlatArrUnique.forEach(elUniq => {
+//     if(newFlatArr.reduce((sum,el) => elUniq == el ? ++sum : sum, 0) == arr.length){
+//       result.push(elUniq);  
+//     }
+//   });
+//   return result;
+// }
   </script>
 </body>
 
